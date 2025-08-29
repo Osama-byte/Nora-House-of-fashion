@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Selection Form</title>
+    <link rel="stylesheet" href="css nora.css">
+    <style>
+        body {
+            background: #101010;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .age-form-container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #181818;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px #0008;
+            padding: 32px;
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 18px;
+            background: #222;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            background: #e91e63;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 14px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #c2185b;
+        }
+
+        .success-msg {
+            color: #4caf50;
+            text-align: center;
+            margin-top: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="age-form-container">
+        <h2>Select Your Age</h2>
+        <form id="ageForm">
+            <label for="age">Age (18-60 years)</label>
+            <select id="age" name="age" required>
+                <option value="">Select age</option>
+                <!-- Age options will be inserted by JS -->
+            </select>
+            <button type="submit">Submit</button>
+            <div class="success-msg" id="success-msg" style="display:none;">Thank you! Age submitted.</div>
+        </form>
+    </div>
+    <script>
+        // Populate age options 18-60
+        const ageSelect = document.getElementById('age');
+        for (let i = 18; i <= 60; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.textContent = i;
+            ageSelect.appendChild(opt);
+        }
+        document.getElementById('ageForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('success-msg').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

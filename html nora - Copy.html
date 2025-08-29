@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nora House of Fashion - Imported Burqas & More</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Amiri&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo/nora-logo.png" alt="Nora House of Fashion Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <button onclick="toggleLanguage()">Toggle Language (EN/UR)</button>
+    </header>
+
+    <div class="container">
+        <!-- Banner -->
+        <div class="banner">
+            <h1 data-en="Discover Elegant Imported Burqas at Nora House of Fashion"
+                data-ur="نورہ ہاؤس آف فیشن پر ایلیگنٹ امپورٹڈ برقع دریافت کریں">Discover Elegant Imported Burqas at Nora
+                House of Fashion</h1>
+            <p data-en="Shop now for 10% off your first order – Use code NORA10"
+                data-ur="اب 10% رعایت کے ساتھ شاپنگ کریں – کوڈ NORA10 استعمال کریں">Shop now for 10% off your first
+                order – Use code NORA10</p>
+            <a href="shop.html" class="shop-now-btn">Shop Now</a>
+        </div>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="assets/images/products/chiffon-burqa-navy.jpg" alt="Imported Chiffon Burqa"
+                        loading="lazy">
+                    <h3>Imported Chiffon Burqa</h3>
+                    <p>₹2500 - Navy, S-XL</p>
+                    <button onclick="addToCart('chiffon-burqa-navy', 2500)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="assets/images/products/silk-dress-material.jpg" alt="Silk Dress Material" loading="lazy">
+                    <h3>Silk Dress Material</h3>
+                    <p>₹1800 - Embroidered</p>
+                    <button onclick="addToCart('silk-dress-material', 1800)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links">
+            <h2>Quick Links</h2>
+            <div class="links">
+                <a href="categories/burqas.html">Burqas</a>
+                <a href="categories/dress-materials.html">Dress Materials</a>
+                <a href="categories/nighties.html">Nighties</a>
+                <a href="categories/innerwear.html">Innerwear</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p data-en="Address: #4-3-226, 1st Floor, Nehru Park, Nizamabad (T.S.)"
+            data-ur="پتہ: #4-3-226، 1ویں فلور، نیہرو پارک، نizamabad (T.S.)">Address: #4-3-226, 1st Floor, Nehru Park,
+            Nizamabad (T.S.)</p>
+        <p data-en="Phone: 8520092509, 9440502398" data-ur="فون: 8520092509، 9440502398">Phone: 8520092509, 9440502398
+        </p>
+        <p data-en="Email: info@norahouseoffashion.com" data-ur="ای میل: info@norahouseoffashion.com">Email:
+            info@norahouseoffashion.com</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <p>© 2025 Nora House of Fashion. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
