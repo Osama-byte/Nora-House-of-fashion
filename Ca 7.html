@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locus Style Discount Calculator</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Fullscreen background video */
+        video.background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Circle animation container */
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+            animation: pulse 4s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        /* Heading with gradient */
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(to right, #111, #666, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Calculator inside circle */
+        .calculator {
+            text-align: center;
+            color: white;
+            width: 80%;
+        }
+
+        .calculator input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .calculator button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: linear-gradient(to right, #444, #999);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .calculator button:hover {
+            background: linear-gradient(to right, #222, #777);
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop class="background">
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+
+    <!-- Circle with Calculator -->
+    <div class="circle">
+        <div class="calculator">
+            <h1>Shopping Cart Discount</h1>
+            <input type="number" id="total" placeholder="Enter total amount">
+            <input type="number" id="discount" placeholder="Enter discount %">
+            <button onclick="calculate()">Calculate Discount</button>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            let total = parseFloat(document.getElementById("total").value);
+            let discount = parseFloat(document.getElementById("discount").value);
+
+            if (isNaN(total) || isNaN(discount)) {
+                document.getElementById("result").innerText = "⚠ Please enter valid numbers";
+                return;
+            }
+
+            let discountAmount = total * (discount / 100);
+            let finalAmount = total - discountAmount;
+
+            document.getElementById("result").innerText =
+                "Discount: ₹" + discountAmount.toFixed(2) +
+                " | Final Price: ₹" + finalAmount.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
